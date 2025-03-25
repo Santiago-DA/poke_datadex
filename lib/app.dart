@@ -9,7 +9,12 @@ class MyApp extends StatelessWidget {
         title: 'Flutter App',
         theme: ThemeData(primarySwatch: Colors.blue), // Default theme
         home: Container(
-          child: Text("Something"),
+          child: Column(
+            children: [
+              Text("Something"),
+              Text("data"),
+            ],
+          ),
         ));
   }
 }
