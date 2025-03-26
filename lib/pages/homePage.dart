@@ -28,7 +28,15 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Text("data"),
+      body: Column(
+        children: [
+          Text("data"),
+          ElevatedButton(
+            onPressed: () {},
+            child: Text("HEY"),
+          ),
+        ],
+      ),
     );
   }
 }
