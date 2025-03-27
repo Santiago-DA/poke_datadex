@@ -1,0 +1,20 @@
+import 'dart:ui';
+
+const normal = Color(0xFFA8A77A);
+const fire = Color(0xFFEE8130);
+const water = Color(0xFF6390F0);
+const electric = Color(0xFFF7D02C);
+const grass = Color(0xFF7AC74C);
+const ice = Color(0xFF96D9D6);
+const fighting = Color(0xFFC22E28);
+const poison = Color(0xFFA33EA1);
+const ground = Color(0xFFE2BF65);
+const flying = Color(0xFFA98FF3);
+const psychic = Color(0xFFF95587);
+const bug = Color(0xFFA6B91A);
+const rock = Color(0xFFB6A136);
+const ghost = Color(0xFF735797);
+const dragon = Color(0xFF6F35FC);
+const dark = Color(0xFF705746);
+const steel = Color(0xFFB7B7CE);
+const fairy = Color(0xFFD685AD);
