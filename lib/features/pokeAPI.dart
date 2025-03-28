@@ -68,5 +68,4 @@ class PokeApiManager {
       throw Exception('Failed to load type details');
     }
   }
-  //get abilities
 }

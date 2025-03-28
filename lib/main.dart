@@ -3,8 +3,11 @@ import 'package:poke_datadex/pages/homePage.dart';
 import 'package:provider/provider.dart';
 import 'package:poke_datadex/Themes/themeProvider.dart';
 import 'package:poke_datadex/Themes/themes.dart';
+import 'package:poke_datadex/features/pokeAPI.dart';
 
-void main() {
+Future<void> main() async {
+  var api = PokeApiManager();
+
   runApp(
     ChangeNotifierProvider(
       create: (_) => ThemeProvider(),

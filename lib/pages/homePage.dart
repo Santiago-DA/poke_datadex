@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:poke_datadex/features/pokeAPI.dart';
 import 'package:provider/provider.dart';
 import 'package:poke_datadex/Themes/themeProvider.dart';
 import 'package:poke_datadex/Themes/themes.dart';
@@ -9,7 +10,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
+
     return Scaffold(
+      floatingActionButton: FloatingActionButton(onPressed: () {}),
       drawer: Drawer(),
       appBar: AppBar(
         title: Text("PokeDataDex"),
@@ -28,14 +31,11 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Text("data"),
-          ElevatedButton(
-            onPressed: () {},
-            child: Text("HEY"),
-          ),
-        ],
+      body: Container(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [],
+        ),
       ),
     );
   }
