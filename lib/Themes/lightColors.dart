@@ -71,4 +71,12 @@ ThemeData lightMode = ThemeData(
   iconTheme: const IconThemeData(
     color: lightPrimary, // Green icons by default
   ),
+  listTileTheme: ListTileThemeData(
+    tileColor: lightSurface,
+    selectedTileColor: lightSurface.withOpacity(0.2),
+    contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(8),
+    ),
+  ),
 );

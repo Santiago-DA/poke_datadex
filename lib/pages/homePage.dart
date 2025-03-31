@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:poke_datadex/features/pokeAPI.dart';
+import 'package:poke_datadex/pages/pokemonScreen.dart';
 import 'package:provider/provider.dart';
 import 'package:poke_datadex/Themes/themeProvider.dart';
-import 'package:poke_datadex/Themes/themes.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,7 +12,6 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       floatingActionButton: FloatingActionButton(onPressed: () {}),
-      drawer: Drawer(),
       appBar: AppBar(
         title: Text("PokeDataDex"),
         actions: [
@@ -31,12 +29,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Container(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [],
-        ),
-      ),
+      body: PokemonScreen(),
     );
   }
 }

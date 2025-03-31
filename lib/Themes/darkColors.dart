@@ -66,4 +66,12 @@ ThemeData darkMode = ThemeData(
   iconTheme: const IconThemeData(
     color: darkPrimary, // Soft green icons
   ),
+  listTileTheme: ListTileThemeData(
+    tileColor: darkSurface,
+    selectedTileColor: darkSurface.withOpacity(0.2),
+    contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(8),
+    ),
+  ),
 );
