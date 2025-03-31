@@ -67,7 +67,7 @@ ThemeData darkMode = ThemeData(
     color: darkPrimary, // Soft green icons
   ),
   listTileTheme: ListTileThemeData(
-    tileColor: darkSurface,
+    tileColor: Color.lerp(darkSecondary, Colors.black87, .80),
     selectedTileColor: darkSurface.withOpacity(0.2),
     contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
     shape: RoundedRectangleBorder(

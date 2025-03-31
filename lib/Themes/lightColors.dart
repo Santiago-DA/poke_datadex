@@ -72,7 +72,7 @@ ThemeData lightMode = ThemeData(
     color: lightPrimary, // Green icons by default
   ),
   listTileTheme: ListTileThemeData(
-    tileColor: lightSurface,
+    tileColor: Color.lerp(lightSecondary, Colors.white, .80),
     selectedTileColor: lightSurface.withOpacity(0.2),
     contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
     shape: RoundedRectangleBorder(

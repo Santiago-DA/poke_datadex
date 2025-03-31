@@ -5,7 +5,6 @@ class Pokemon {
   final String name;
   final List<PokemonType> types;
   final String imageUrl;
-
   Pokemon({
     required this.id,
     required this.name,

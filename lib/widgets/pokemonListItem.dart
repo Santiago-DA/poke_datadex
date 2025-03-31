@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:poke_datadex/models/pokemon.dart';
+import 'package:poke_datadex/pages/pokemonDetailsPage.dart';
 import 'package:poke_datadex/widgets/typeChip.dart';
 
 class PokemonListItem extends StatelessWidget {
@@ -17,7 +18,12 @@ class PokemonListItem extends StatelessWidget {
 
     return ListTile(
       onTap: () {
-        print(pokemon.name);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => PokemonDetailsPage(pokemon: pokemon),
+          ),
+        );
       },
       leading: Image.network(pokemon.imageUrl),
       title: Text(pkkmName),

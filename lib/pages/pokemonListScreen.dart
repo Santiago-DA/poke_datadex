@@ -119,12 +119,12 @@ class _PokemonListScreenState extends State<PokemonScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pokédex'),
-      ),
-      body: RefreshIndicator(
-        onRefresh: _refreshPokemons,
-        child: _buildPokemonList(),
+      body: Container(
+        margin: EdgeInsets.all(8),
+        child: RefreshIndicator(
+          onRefresh: _refreshPokemons,
+          child: _buildPokemonList(),
+        ),
       ),
     );
   }
@@ -145,9 +145,11 @@ class _PokemonListScreenState extends State<PokemonScreen> {
           );
         }
 
-        return PokemonListItem(
-          // <-- Parentheses added
-          pokemon: _pokemons[index],
+        return Container(
+          margin: EdgeInsets.only(bottom: 4),
+          child: PokemonListItem(
+            pokemon: _pokemons[index],
+          ),
         );
       },
     );
