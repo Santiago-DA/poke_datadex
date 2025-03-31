@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poke_datadex/models/pokemon.dart';
 import 'package:poke_datadex/pages/pokemonDetailsPage.dart';
+import 'package:poke_datadex/widgets/favoriteToggle.dart';
 import 'package:poke_datadex/widgets/typeChip.dart';
 
 class PokemonListItem extends StatelessWidget {
@@ -13,7 +14,7 @@ class PokemonListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String pkkmName = pokemon.name;
+    final String pkmName = pokemon.name;
     final int pkmId = pokemon.id;
 
     return ListTile(
@@ -26,8 +27,10 @@ class PokemonListItem extends StatelessWidget {
         );
       },
       leading: Image.network(pokemon.imageUrl),
-      title: Text(pkkmName),
-      trailing: Text("$pkmId"),
+      title: Text("#$pkmId  $pkmName"),
+      trailing: FavoriteToggle(
+        pokemon: pokemon,
+      ),
       subtitle: Row(
         children: pokemon.types
             .map(

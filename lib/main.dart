@@ -9,8 +9,10 @@ Future<void> main() async {
   var api = PokeApiManager();
 
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => ThemeProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ThemeProvider()),
+      ],
       child: MyApp(),
     ),
   );
