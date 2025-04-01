@@ -3,6 +3,8 @@ import 'package:poke_datadex/models/pokemon.dart';
 import 'package:poke_datadex/pages/pokemonDetailsPage.dart';
 import 'package:poke_datadex/widgets/favoriteToggle.dart';
 import 'package:poke_datadex/widgets/typeChip.dart';
+import 'package:poke_datadex/features/favoritePokemons.dart';
+import 'package:provider/provider.dart';
 
 class PokemonListItem extends StatelessWidget {
   Pokemon pokemon;
@@ -16,6 +18,8 @@ class PokemonListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final String pkmName = pokemon.name;
     final int pkmId = pokemon.id;
+    final favoritesProvider = Provider.of<FavoritesProvider>(context);
+    bool isFavorite = favoritesProvider.isFavorite(pkmId);
 
     return ListTile(
       onTap: () {
@@ -25,11 +29,13 @@ class PokemonListItem extends StatelessWidget {
             builder: (context) => PokemonDetailsPage(pokemon: pokemon),
           ),
         );
+        print(isFavorite);
       },
       leading: Image.network(pokemon.imageUrl),
       title: Text("#$pkmId  $pkmName"),
       trailing: FavoriteToggle(
         pokemon: pokemon,
+        isFavorited: isFavorite ? true : false,
       ),
       subtitle: Row(
         children: pokemon.types

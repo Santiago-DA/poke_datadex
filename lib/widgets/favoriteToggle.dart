@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poke_datadex/models/pokemon.dart';
+import 'package:provider/provider.dart';
+import 'package:poke_datadex/features/favoritePokemons.dart';
 
 class FavoriteToggle extends StatefulWidget {
   final Pokemon pokemon;
@@ -24,12 +26,16 @@ class _FavoriteToggle extends State<FavoriteToggle> {
 
   @override
   Widget build(BuildContext context) {
+    int pkmId = widget.pokemon.id;
+    String name = widget.pokemon.name;
+    final favoritesProvider = Provider.of<FavoritesProvider>(context);
+
     return IconButton(
       onPressed: () {
-        print(widget.pokemon.name);
         setState(() {
           isFilled = !isFilled;
         });
+        favoritesProvider.toggleFavorite(pkmId);
       },
       icon: Icon(
         isFilled ? Icons.favorite : Icons.favorite_border,

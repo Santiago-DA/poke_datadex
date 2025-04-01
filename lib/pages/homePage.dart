@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       floatingActionButton: FloatingActionButton(onPressed: () {}),
+      drawer: Drawer(),
       appBar: AppBar(
         title: Text("PokeDataDex"),
         actions: [

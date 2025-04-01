@@ -11,6 +11,7 @@ class PokemonDetailsPage extends StatelessWidget {
     var z = pokemon.name;
     return Scaffold(
       appBar: AppBar(title: Text("Second Page")),
+      //bottomNavigationBar: BottomNavigationBar(items: items),
       body: Center(
         child: Text(z),
       ),
