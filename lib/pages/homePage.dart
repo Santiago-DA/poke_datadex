@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
     final themeProvider = Provider.of<ThemeProvider>(context);
 
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {}),
+      //floatingActionButton: FloatingActionButton(onPressed: () {}),
       drawer: Drawer(),
       appBar: AppBar(
         title: Text("PokeDataDex"),

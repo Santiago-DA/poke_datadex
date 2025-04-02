@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class FavoritesProvider with ChangeNotifier {
-  final Set<int> _favoriteIds = {};
+  Set<int> _favoriteIds = {};
   static const String _prefsKey = 'favorites';
 
   Set<int> get favorites => _favoriteIds;
@@ -22,8 +22,14 @@ class FavoritesProvider with ChangeNotifier {
     final prefs = await SharedPreferences.getInstance();
     if (_favoriteIds.contains(id)) {
       _favoriteIds.remove(id);
+      var ls = _favoriteIds.toList();
+      ls.sort();
+      _favoriteIds = ls.toSet();
     } else {
       _favoriteIds.add(id);
+      var ls = _favoriteIds.toList();
+      ls.sort();
+      _favoriteIds = ls.toSet();
     }
     await prefs.setStringList(
       _prefsKey,

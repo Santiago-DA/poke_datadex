@@ -29,7 +29,7 @@ class PokemonListItem extends StatelessWidget {
             builder: (context) => PokemonDetailsPage(pokemon: pokemon),
           ),
         );
-        print(isFavorite);
+        print(favoritesProvider.favorites);
       },
       leading: Image.network(pokemon.imageUrl),
       title: Text("#$pkmId  $pkmName"),
