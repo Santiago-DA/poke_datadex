@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:poke_datadex/features/currentPokemonProvider.dart';
 import 'package:poke_datadex/models/pokemon.dart';
 import 'package:poke_datadex/pages/pokemonDetailsPage.dart';
 import 'package:poke_datadex/widgets/favoriteToggle.dart';
@@ -23,13 +24,13 @@ class PokemonListItem extends StatelessWidget {
 
     return ListTile(
       onTap: () {
+        context.read<CurrentPokemonProvider>().updateCurrent(pokemon);
         Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => PokemonDetailsPage(pokemon: pokemon),
           ),
         );
-        print(favoritesProvider.favorites);
       },
       leading: Image.network(pokemon.imageUrl),
       title: Text("#$pkmId  $pkmName"),

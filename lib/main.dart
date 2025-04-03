@@ -5,6 +5,7 @@ import 'package:poke_datadex/Themes/themeProvider.dart';
 import 'package:poke_datadex/Themes/themes.dart';
 import 'package:poke_datadex/features/pokeAPI.dart';
 import "package:poke_datadex/features/favoritePokemons.dart";
+import "package:poke_datadex/features/currentPokemonProvider.dart";
 
 Future<void> main() async {
   var api = PokeApiManager();
@@ -13,7 +14,8 @@ Future<void> main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => ThemeProvider()),
-        ChangeNotifierProvider(create: (_) => FavoritesProvider())
+        ChangeNotifierProvider(create: (_) => FavoritesProvider()),
+        ChangeNotifierProvider(create: (_) => CurrentPokemonProvider()),
       ],
       child: MyApp(),
     ),
