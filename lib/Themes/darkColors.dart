@@ -14,64 +14,66 @@ const Color darkOnBackground = Color(0xFFFFFFFF); // White text
 const Color darkOnSurface = Color(0xFFFFFFFF); // White text
 const Color darkOnError = Color(0xFF000000); // Black text
 ThemeData darkMode = ThemeData(
-  brightness: Brightness.dark,
-  colorScheme: const ColorScheme.dark(
-    primary: darkPrimary,
-    primaryContainer: darkPrimaryVariant,
-    secondary: darkSecondary,
-    secondaryContainer: darkSecondaryVariant,
-    background: darkBackground,
-    surface: darkSurface,
-    error: darkError,
-    onPrimary: darkOnPrimary,
-    onSecondary: darkOnSecondary,
-    onBackground: darkOnBackground,
-    onSurface: darkOnSurface,
-    onError: darkOnError,
-  ),
-  floatingActionButtonTheme: const FloatingActionButtonThemeData(
-    backgroundColor: darkSecondary,
-    foregroundColor: darkOnSecondary,
-  ),
-  // Text Styles
-  textTheme: const TextTheme(
-    displayLarge: TextStyle(
-      fontSize: 24,
-      fontWeight: FontWeight.bold,
-      color: Colors.white, // High contrast
+    brightness: Brightness.dark,
+    colorScheme: const ColorScheme.dark(
+      primary: darkPrimary,
+      primaryContainer: darkPrimaryVariant,
+      secondary: darkSecondary,
+      secondaryContainer: darkSecondaryVariant,
+      background: darkBackground,
+      surface: darkSurface,
+      error: darkError,
+      onPrimary: darkOnPrimary,
+      onSecondary: darkOnSecondary,
+      onBackground: darkOnBackground,
+      onSurface: darkOnSurface,
+      onError: darkOnError,
     ),
-    bodyLarge: TextStyle(
-      fontSize: 16,
-      color: Colors.white70, // Slightly muted
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: darkSecondary,
+      foregroundColor: darkOnSecondary,
     ),
-    labelLarge: TextStyle(
-      fontSize: 14,
-      color: Colors.white60, // Button text
+    // Text Styles
+    textTheme: const TextTheme(
+      displayLarge: TextStyle(
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+        color: Colors.white, // High contrast
+      ),
+      bodyLarge: TextStyle(
+        fontSize: 16,
+        color: Colors.white70, // Slightly muted
+      ),
+      labelLarge: TextStyle(
+        fontSize: 14,
+        color: Colors.white60, // Button text
+      ),
     ),
-  ),
-  elevatedButtonTheme: ElevatedButtonThemeData(
-    style: ElevatedButton.styleFrom(
-      backgroundColor: darkPrimary, // Soft green
-      foregroundColor: darkOnPrimary,
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: darkPrimary, // Soft green
+        foregroundColor: darkOnPrimary,
+      ),
     ),
-  ),
-  drawerTheme: const DrawerThemeData(
-    backgroundColor: darkSurface, // Matches surface
-    elevation: 0,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.horizontal(right: Radius.circular(12)),
+    drawerTheme: const DrawerThemeData(
+      backgroundColor: darkSurface, // Matches surface
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.horizontal(right: Radius.circular(12)),
+      ),
     ),
-  ),
-  // Icons
-  iconTheme: const IconThemeData(
-    color: darkPrimary, // Soft green icons
-  ),
-  listTileTheme: ListTileThemeData(
-    tileColor: Color.lerp(darkSecondary, Colors.black87, .80),
-    selectedTileColor: darkSurface.withOpacity(0.2),
-    contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(8),
+    // Icons
+    iconTheme: const IconThemeData(
+      color: darkPrimary, // Soft green icons
     ),
-  ),
-);
+    listTileTheme: ListTileThemeData(
+      tileColor: Color.lerp(darkSecondary, Colors.black87, .80),
+      selectedTileColor: darkSurface.withOpacity(0.2),
+      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
+    ),
+    cardTheme: CardThemeData(
+      color: Color.lerp(darkPrimary, Colors.black54, .80),
+    ));

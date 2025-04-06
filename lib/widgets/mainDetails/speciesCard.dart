@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:poke_datadex/features/currentPokemonProvider.dart';
 import 'package:poke_datadex/models/pokemon.dart';
@@ -65,7 +66,7 @@ class _SpeciesCard extends State<SpeciesCard> {
 
     return Card(
       elevation: 4,
-      color: Color.lerp(Theme.of(context).primaryColor, Colors.white, .80),
+      //color: Color.lerp(Theme.of(context).primaryColor, Colors.white, .80),
       margin: const EdgeInsets.all(8),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
@@ -119,13 +120,18 @@ class _SpeciesCard extends State<SpeciesCard> {
                 ),
               ],
             ),
+            const SizedBox(height: 4),
             //cry Button / gender ratio
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedButton.icon(
-                  onPressed: () {},
+                  onPressed: () async {
+                    final player = AudioPlayer();
+                    await player
+                        .play(UrlSource(pokemon.json["cries"]["latest"]));
+                  },
                   label: Text("play Cry"),
                   icon: Icon(Icons.volume_up_outlined),
                   style: OutlinedButton.styleFrom(

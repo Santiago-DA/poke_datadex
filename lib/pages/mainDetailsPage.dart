@@ -8,6 +8,7 @@ class MainDetailsPage extends StatelessWidget {
       child: Column(
         children: [
           SpeciesCard(),
+          const SizedBox(height: 4),
         ],
       ),
     );

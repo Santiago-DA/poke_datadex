@@ -15,68 +15,70 @@ const Color lightOnSurface = Color(0xFF000000); // Black text
 const Color lightOnError = Color(0xFFFFFFFF);
 
 ThemeData lightMode = ThemeData(
-  brightness: Brightness.light,
-  colorScheme: const ColorScheme.light(
-    primary: lightPrimary,
-    primaryContainer: lightPrimaryVariant,
-    secondary: lightSecondary,
-    secondaryContainer: lightSecondaryVariant,
-    background: lightBackground,
-    surface: lightSurface,
-    error: lightError,
-    onPrimary: lightOnPrimary,
-    onSecondary: lightOnSecondary,
-    onBackground: lightOnBackground,
-    onSurface: lightOnSurface,
-    onError: lightOnError,
-  ),
-  appBarTheme: const AppBarTheme(
-    backgroundColor: lightPrimary,
-    foregroundColor: lightOnPrimary,
-    elevation: 0,
-  ),
-  floatingActionButtonTheme: const FloatingActionButtonThemeData(
-    backgroundColor: lightSecondary,
-    foregroundColor: lightOnSecondary,
-  ),
-  // Text Styles
-  textTheme: const TextTheme(
-    displayLarge: TextStyle(
-      fontSize: 24,
-      fontWeight: FontWeight.bold,
-      color: Colors.black, // Maintains contrast
+    brightness: Brightness.light,
+    colorScheme: const ColorScheme.light(
+      primary: lightPrimary,
+      primaryContainer: lightPrimaryVariant,
+      secondary: lightSecondary,
+      secondaryContainer: lightSecondaryVariant,
+      background: lightBackground,
+      surface: lightSurface,
+      error: lightError,
+      onPrimary: lightOnPrimary,
+      onSecondary: lightOnSecondary,
+      onBackground: lightOnBackground,
+      onSurface: lightOnSurface,
+      onError: lightOnError,
     ),
-    bodyLarge: TextStyle(
-      fontSize: 16,
-      color: Colors.black87,
-    ),
-    labelLarge: TextStyle(
-      fontSize: 14,
-      color: Colors.black54, // Button text
-    ),
-  ),
-  elevatedButtonTheme: ElevatedButtonThemeData(
-    style: ElevatedButton.styleFrom(
-      backgroundColor: lightPrimary, // Deep green
+    appBarTheme: const AppBarTheme(
+      backgroundColor: lightPrimary,
       foregroundColor: lightOnPrimary,
+      elevation: 0,
     ),
-  ),
-  drawerTheme: const DrawerThemeData(
-    backgroundColor: lightSurface, // Matches surface color
-    elevation: 0,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.horizontal(right: Radius.circular(12)),
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: lightSecondary,
+      foregroundColor: lightOnSecondary,
     ),
-  ),
-  iconTheme: const IconThemeData(
-    color: lightPrimary, // Green icons by default
-  ),
-  listTileTheme: ListTileThemeData(
-    tileColor: Color.lerp(lightSecondary, Colors.white, .80),
-    selectedTileColor: lightSurface.withOpacity(0.2),
-    contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(8),
+    // Text Styles
+    textTheme: const TextTheme(
+      displayLarge: TextStyle(
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+        color: Colors.black, // Maintains contrast
+      ),
+      bodyLarge: TextStyle(
+        fontSize: 16,
+        color: Colors.black87,
+      ),
+      labelLarge: TextStyle(
+        fontSize: 14,
+        color: Colors.black54, // Button text
+      ),
     ),
-  ),
-);
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: lightPrimary, // Deep green
+        foregroundColor: lightOnPrimary,
+      ),
+    ),
+    drawerTheme: const DrawerThemeData(
+      backgroundColor: lightSurface, // Matches surface color
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.horizontal(right: Radius.circular(12)),
+      ),
+    ),
+    iconTheme: const IconThemeData(
+      color: lightPrimary, // Green icons by default
+    ),
+    listTileTheme: ListTileThemeData(
+      tileColor: Color.lerp(lightSecondary, Colors.white, .80),
+      selectedTileColor: lightSurface.withOpacity(0.2),
+      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8),
+      ),
+    ),
+    cardTheme: CardThemeData(
+      color: Color.lerp(lightPrimary, Colors.white, .80),
+    ));
