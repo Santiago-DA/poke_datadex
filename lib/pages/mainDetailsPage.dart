@@ -7,6 +7,7 @@ class MainDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
+        //crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           SpeciesCard(),
           const SizedBox(height: 8),

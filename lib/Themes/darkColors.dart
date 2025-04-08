@@ -75,5 +75,5 @@ ThemeData darkMode = ThemeData(
       ),
     ),
     cardTheme: CardThemeData(
-      color: Color.lerp(darkPrimary, Colors.black54, .80),
+      color: Color.lerp(darkSecondary, Colors.black54, .80),
     ));

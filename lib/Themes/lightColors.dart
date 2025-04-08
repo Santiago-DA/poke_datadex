@@ -80,5 +80,5 @@ ThemeData lightMode = ThemeData(
       ),
     ),
     cardTheme: CardThemeData(
-      color: Color.lerp(lightPrimary, Colors.white, .80),
+      color: Color.lerp(lightSecondary, Colors.white, .80),
     ));

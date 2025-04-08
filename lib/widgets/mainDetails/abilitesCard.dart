@@ -68,15 +68,116 @@ class _AbilitiesCardState extends State<AbilitiesCard> {
   Widget build(BuildContext context) {
     final pokemon = Provider.of<CurrentPokemonProvider>(context).currentPokemon;
     return Card(
-      child: isLoading
-          ? CircularProgressIndicator()
-          : Column(
-              children: pokemon.abilities
-                  .map(
-                    (ability) => Text(ability.name),
-                  )
-                  .toList(),
-            ),
+      elevation: 4,
+      margin: const EdgeInsets.all(8),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: BorderSide(
+          color: Colors.grey.withOpacity(0.5),
+          width: 1,
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: isLoading
+            ? CircularProgressIndicator()
+            : Column(
+                children: [
+                  Text(
+                    "Abilities",
+                    style: Theme.of(context).textTheme.displaySmall,
+                  ),
+                  const SizedBox(height: 8),
+                  Column(
+                    //crossAxisAlignment: CrossAxisAlignment.start,
+                    children: pokemon.abilities
+                        .map(
+                          (ability) => Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16),
+                              side: BorderSide(
+                                color: Colors.grey.withOpacity(0.5),
+                                width: 1,
+                              ),
+                            ),
+                            margin: EdgeInsets.all(4),
+                            color: Color.lerp(
+                              Theme.of(context).canvasColor,
+                              Theme.of(context).primaryColor,
+                              0.30,
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Container(
+                                width: double.infinity,
+                                child: GestureDetector(
+                                  onTap: () {
+                                    showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) {
+                                        return AlertDialog(
+                                          title: Text(
+                                            ability.name,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .displaySmall,
+                                          ),
+                                          content: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Text(
+                                                "Description",
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .headlineSmall,
+                                              ),
+                                              Text(
+                                                ability.flavorText,
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyLarge,
+                                              ),
+                                              Text(
+                                                "Effect",
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .headlineSmall,
+                                              ),
+                                              Text(
+                                                ability.description,
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyLarge,
+                                              ),
+                                            ],
+                                          ),
+                                        );
+                                      },
+                                    );
+                                  },
+                                  child: ability.isHidden
+                                      ? Text(
+                                          "${ability.name} - Hidden",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge,
+                                        )
+                                      : Text(
+                                          ability.name,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge,
+                                        ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ],
+              ),
+      ),
     );
   }
 }
