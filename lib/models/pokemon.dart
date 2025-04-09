@@ -1,4 +1,5 @@
 import 'package:poke_datadex/models/ability.dart';
+import 'package:poke_datadex/models/stats.dart';
 
 import 'pokemonTypes.dart';
 
@@ -9,14 +10,15 @@ class Pokemon {
   final String imageUrl;
   final Map<String, dynamic> json;
   final List<Ability> abilities;
-  Pokemon({
-    required this.id,
-    required this.name,
-    required this.types,
-    required this.imageUrl,
-    required this.json,
-    required this.abilities,
-  });
+  final Stats stats;
+  Pokemon(
+      {required this.id,
+      required this.name,
+      required this.types,
+      required this.imageUrl,
+      required this.json,
+      required this.abilities,
+      required this.stats});
 
   factory Pokemon.fromJson(Map<String, dynamic> json) {
     final types = (json['types'] as List)
@@ -32,13 +34,16 @@ class Pokemon {
         ),
       );
     }
+
     return Pokemon(
-        id: json['id'],
-        name: json['name'],
-        imageUrl: json['sprites']['other']["official-artwork"]["front_default"],
-        types: types,
-        json: json,
-        abilities: aux);
+      id: json['id'],
+      name: json['name'],
+      imageUrl: json['sprites']['other']["official-artwork"]["front_default"],
+      types: types,
+      json: json,
+      abilities: aux,
+      stats: Stats.fromJson(json),
+    );
   }
   Pokemon.empty()
       : id = 0,
@@ -46,9 +51,9 @@ class Pokemon {
         types = [],
         imageUrl = "",
         json = {"": ""},
-        abilities = [];
+        abilities = [],
+        stats = Stats.zero();
 
-  //String get description => json[];
   String get capitalizedName =>
       name[0].toUpperCase() + name.substring(1).toLowerCase();
 }

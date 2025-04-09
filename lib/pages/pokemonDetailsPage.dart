@@ -28,7 +28,9 @@ class _PokemonDetailsPage extends State<PokemonDetailsPage> {
       appBar: AppBar(
         title: Text(widget.pokemon.name),
       ),
-      body: pages[currentIndex],
+      body: SingleChildScrollView(
+        child: pages[currentIndex],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (int newIndex) {
