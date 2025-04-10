@@ -4,7 +4,8 @@ class MovesDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text("Moves"),
-    );
+        child: Column(
+      children: [Text("moves")],
+    ));
   }
 }
