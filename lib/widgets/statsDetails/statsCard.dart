@@ -45,6 +45,13 @@ class PokemonStatsBarChart extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Center(
+              child: Text(
+                "Stats",
+                style: Theme.of(context).textTheme.displaySmall,
+              ),
+            ),
+            const SizedBox(height: 4),
             _buildStatRow('HP', stats.hp, textColor),
             SizedBox(height: spacing),
             _buildStatRow('ATK', stats.attack, textColor),

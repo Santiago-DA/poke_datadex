@@ -60,7 +60,6 @@ class _AbilitiesCardState extends State<AbilitiesCard> {
       pokemon.abilities[i].name = name;
       pokemon.abilities[i].description = englishEffect;
       pokemon.abilities[i].flavorText = englishFlavorText;
-      print(name);
     }
   }
 
