@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:poke_datadex/models/pokemon.dart';
 import 'mainDetailsPage.dart';
 import 'statsDetailsPage.dart';
-import 'movesDetailsPage.dart';
 import 'otherDetailsPage.dart';
 
 class PokemonDetailsPage extends StatefulWidget {
@@ -18,7 +17,6 @@ class _PokemonDetailsPage extends State<PokemonDetailsPage> {
   List<Widget> pages = [
     MainDetailsPage(),
     StatsDetailsPage(),
-    MovesDetailsPage(),
     OtherDetailsPage(),
   ];
 
@@ -47,10 +45,6 @@ class _PokemonDetailsPage extends State<PokemonDetailsPage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.assessment),
             label: "stats",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.swap_horiz),
-            label: "moves",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.more_horiz),
