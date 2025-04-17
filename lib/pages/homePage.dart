@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:poke_datadex/pages/favoritesPkmPage.dart';
 import 'package:poke_datadex/pages/pokemonListScreen.dart';
 import 'package:provider/provider.dart';
 import 'package:poke_datadex/Themes/themeProvider.dart';
@@ -12,7 +13,29 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       //floatingActionButton: FloatingActionButton(onPressed: () {}),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              child: Text(
+                "Opciones",
+                style: Theme.of(context).textTheme.displaySmall,
+              ),
+            ),
+            ListTile(
+              tileColor: Theme.of(context).scaffoldBackgroundColor,
+              title: Text("Favorites"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FavoritesPkmPage()),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: Text("PokeDataDex"),
         actions: [
