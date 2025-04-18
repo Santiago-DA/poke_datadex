@@ -73,7 +73,7 @@ class _BreedingCard extends State<BreedingCard> {
             : Column(
                 children: [
                   Text(
-                    pokemon.capitalizedName,
+                    "Breeding",
                     style: Theme.of(context).textTheme.displaySmall,
                   ),
                   const SizedBox(height: 8),
